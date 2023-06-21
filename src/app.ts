@@ -4,19 +4,330 @@
 //let writeStream = createWriteStream("../out/graph.txt") as WriteStream;  //that's what we output
 
 const labyrinth: number[] = [
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 1, 1, 1,
-  3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 3, 3, 1, 3, 1, 3, 1, 3, 3, 3, 1,
-  1, 1, 1, 3, 1, 1, 1, 1, 3, 1, 3, 1, 3, 1, 1, 1, 3, 3, 1, 1, 1, 3, 3, 3, 3, 3,
-  3, 3, 3, 3, 3, 1, 1, 1, 1, 3, 1, 1, 1, 3, 1, 1, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3,
-  3, 3, 3, 1, 1, 3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1,
-  3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1, 1, 2, 2, 1, 1,
-  1, 3, 1, 1, 3, 1, 1, 3, 3, 3, 3, 1, 2, 2, 2, 2, 2, 2, 1, 3, 3, 3, 3, 1, 1, 3,
-  1, 1, 3, 1, 2, 2, 2, 2, 2, 2, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1, 3, 1, 2, 2, 2, 2,
-  2, 2, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 3, 1,
-  1, 3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 1, 1, 3, 1, 1, 3, 1, 1, 1,
-  1, 1, 1, 1, 1, 1, 3, 3, 3, 1, 1, 3, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-  3, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1,
-  1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  3,
+  3,
+  1,
+  3,
+  1,
+  3,
+  1,
+  3,
+  3,
+  3,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  3,
+  1,
+  3,
+  1,
+  1,
+  1,
+  3,
+  3,
+  1,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  0,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  2,
+  2,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  1,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  1,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  3,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  3,
+  1,
+  1,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  3,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
 ];
 
 const width = 18; // rows of squares in labyrinth
@@ -97,7 +408,7 @@ console.log("length", Object.keys(graphRepresentation.adj_list).length);
 // for(const key of Object.keys(graphRepresentation.adj_list)) {
 //   writeStream.write(JSON.stringify(key) + ":" + JSON.stringify(graphRepresentation.adj_list[key]) + '\n\n');
 // }
-console.log(graphRepresentation.adj_list);
+//console.log(graphRepresentation.adj_list);
 // ----- ----- ----- ----- -----
 
 type Info = {
@@ -113,55 +424,57 @@ type SeenList = {
   [index: number]: boolean;
 };
 
+type PriorityQueue = {
+  vertex: number;
+  distance: number;
+};
+
 function DijkstraShortestWay(
   start: number,
   finish: number,
-  currentGraph: Graph // the only thing we need from it is adj_list
+  currentGraph: Graph, // the only thing we need from it is adj_list
 ): number[] {
   const adj_list = currentGraph.adj_list;
-  const adj_list_length = Object.keys(adj_list).length;
-  // object to contain all of our seen vertices
+  // const adj_list_length = Object.keys(adj_list).length;
+
   const seen: SeenList = {};
   const info: InfoList = {};
 
-  // for (let k of Object.keys(adj_list)) {
-  //   info[+k as number] = {
-  //     parent: 0,
-  //     lowestDist: Infinity,
-  //   };
-  // }
-  //
+  const queue: PriorityQueue[] = [{ vertex: start, distance: 0 }];
   info[start] = {
     parent: -1,
     lowestDist: 0,
   };
 
-  let current: number = start;
-  while (Object.keys(seen).length !== adj_list_length) {
-    seen[current] = true;
-    for (const elem of adj_list[current]) {
-      if (Object.hasOwn(seen, elem.index)) {
+  while (queue.length > 0) {
+    queue.sort((a, b) => a.distance - b.distance);
+    const { vertex } = queue.shift()!;
+    if (seen[vertex]) {
+      continue;
+    }
+    seen[vertex] = true;
+
+    for (const elem of adj_list[vertex]) {
+      if (seen[elem.index]) {
         continue;
       }
 
-      info[elem.index] = {
-        parent: current,
-        lowestDist: Infinity,
-      };
-      let newLowest = info[current].lowestDist + elem.weight;
-      if (newLowest < info[elem.index].lowestDist) {
-        info[elem.index].lowestDist = newLowest;
+      const newLowest = info[vertex].lowestDist + elem.weight;
+
+      if (!info[elem.index] || newLowest < info[elem.index].lowestDist) {
+        info[elem.index] = {
+          parent: vertex,
+          lowestDist: newLowest,
+        };
+
+        queue.push({
+          vertex: elem.index,
+          distance: newLowest,
+        });
       }
-
-      console.log("current", current);
-      current = elem.index; // потрібно покращити умову - я рухаюся по дереву, але застрягаю на місці, якщо діти вершини вже були пройдені
     }
-
-    // problem - how do we choose our fucking next Vertex
-    // current = ???
   }
 
-  // result generation
   const out: number[] = [];
   let curr = finish;
 
@@ -171,8 +484,67 @@ function DijkstraShortestWay(
   }
 
   out.push(start);
-  console.log(out);
-  return out.reverse();
-}
 
-DijkstraShortestWay(19, 80, graphRepresentation);
+  return out.reverse();
+  // const adj_list = currentGraph.adj_list;
+  // const adj_list_length = Object.keys(adj_list).length;
+  // // object to contain all of our seen vertices
+  // const seen: SeenList = {};
+  // const info: InfoList = {};
+  //
+  // // const queue: PriorityQueue[] = [{vertex: start, distance: 0}];
+  //
+  // info[start] = {
+  //   parent: -1,
+  //   lowestDist: 0,
+  // };
+  //
+  // seen[start] = true;
+  //
+  // let current: number = start;
+  // while (Object.keys(seen).length !== adj_list_length) {
+  //   let minDist = Infinity;
+  //   let nextVertex = current;
+  //   for (const elem of adj_list[current]) {
+  //     if (Object.hasOwn(seen, elem.index)) {
+  //       continue;
+  //     }
+  //
+  //     info[elem.index] = {
+  //       parent: current,
+  //       lowestDist: Infinity,
+  //     };
+  //     let newLowest = info[current].lowestDist + elem.weight;
+  //     if (newLowest < info[elem.index].lowestDist) {
+  //       info[elem.index].lowestDist = newLowest;
+  //     }
+  //
+  //     if (info[elem.index].lowestDist < minDist) {
+  //       minDist = info[elem.index].lowestDist;
+  //       nextVertex = elem.index;
+  //       console.log("nextVertex", nextVertex);
+  //     }
+  //   }
+  //   current = nextVertex; // потрібно покращити умову - я рухаюся по дереву, але застрягаю на місці, якщо діти вершини вже були пройдені
+  //   seen[current] = true;
+  // }
+  //
+  // // result generation
+  // const out: number[] = [];
+  // let curr = finish;
+  //
+  // while (info[curr].parent !== -1) {
+  //   out.push(curr);
+  //   curr = info[curr].parent;
+  // }
+  //
+  // out.push(start);
+  // console.log(out);
+  // return out.reverse();
+}
+// const dist = DijkstraShortestWay(206, 242, graphRepresentation);
+const dist = DijkstraShortestWay(19, 304, graphRepresentation);
+console.log(dist);
+//
+//
+export default { DijkstraShortestWay, graphRepresentation };
